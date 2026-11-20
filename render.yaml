@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: xray-vless-render
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: WS_PATH
+        value: /ws
+      # VLESS_UUID is set in the Render dashboard, not in this file.
